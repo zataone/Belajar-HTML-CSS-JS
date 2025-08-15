@@ -9,14 +9,63 @@
   </head>
 
   <body>
-    <nav>
-      <ul>
-        <li><img src="logo.png" alt="Logo" /></li>
-        <li><a href="index.html">experts</a></li>
-        <li><a href="html.html">Community</a></li>
-        <li><a href="css.html">Support</a></li>
-      </ul>
-    </nav>
+    <header>
+      <div class="container">
+        <!-- Baris utama -->
+        <div class="header-main">
+          <!-- Logo -->
+          <div class="logo">
+            <a href="#"
+              ><img
+                src="https://cdn.rareblocks.xyz/collection/clarity/images/logo.svg"
+                alt="Logo"
+            /></a>
+          </div>
+
+          <!-- Menu kiri (desktop) -->
+          <nav class="menu-left">
+            <a href="#">Features</a>
+            <a href="#">Pricing</a>
+            <a href="#">Automation</a>
+          </nav>
+
+          <!-- Menu kanan (desktop) -->
+          <nav class="menu-right">
+            <a href="#">Customer Login</a>
+            <a href="#" class="btn">Sign up</a>
+          </nav>
+
+          <!-- Tombol burger (mobile) -->
+          <button class="burger" id="burger-btn" aria-label="Toggle Menu">
+            <svg
+              id="burger-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              width="28"
+              height="28"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Menu mobile -->
+        <div class="mobile-menu" id="mobile-menu">
+          <a href="#">Features</a>
+          <a href="#">Pricing</a>
+          <a href="#">Automation</a>
+          <a href="#">Customer Login</a>
+          <a href="#" class="btn">Sign up</a>
+        </div>
+      </div>
+    </header>
 
     <h1 class="title">Quality resources shared by the community</h1>
     <div class="centered">

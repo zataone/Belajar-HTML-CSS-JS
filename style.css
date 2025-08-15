@@ -1,3 +1,111 @@
+/* Header */
+header {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem 0;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Baris utama header */
+.header-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo img {
+  height: 40px;
+}
+
+/* Menu desktop kiri */
+.menu-left {
+  display: flex;
+  gap: 2rem;
+  margin-left: 2rem;
+  margin-right: auto;
+}
+
+/* Menu desktop kanan */
+.menu-right {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Link menu */
+nav a {
+  text-decoration: none;
+  color: #111827;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: rgba(17, 24, 39, 0.5);
+}
+
+/* Tombol Sign up */
+.btn {
+  background: #111827;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.btn:hover {
+  background: #4b5563;
+}
+
+/* Tombol burger */
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Menu mobile */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+.mobile-menu a {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+.mobile-menu a:hover {
+  background: #f3f4f6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .menu-left,
+  .menu-right {
+    display: none; /* Sembunyikan menu desktop */
+  }
+  .burger {
+    display: block; /* Tampilkan tombol burger */
+  }
+  .mobile-menu.show {
+    display: flex; /* Tampilkan menu mobile saat aktif */
+  }
+}
+
 .title {
   font-size: 50px;
   text-align: center;
