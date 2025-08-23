@@ -1,0 +1,2334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HPSN</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://hpsn.smartservice.co.id/landing-page/assets/css/style.css"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://hpsn.smartservice.co.id/landing-page/img/logo/hpsn25.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://hpsn.smartservice.co.id/css/whatsbutton.min.css"
+    />
+    <style>
+      .bg-header {
+        background-image: url("landing-page/assets/img/dragon-scales.svg");
+
+        background-size: contain;
+        /* atau 'contain' tergantung preferensi */
+        background-position: center;
+      }
+    </style>
+    <style>
+      .title-shimmer {
+        width: 40%;
+        border-radius: 4px;
+      }
+
+      .publish-date-shimmer {
+        width: 60%;
+        float: right;
+        border-radius: 4px;
+      }
+
+      .description-shimmer {
+        width: 70%;
+        border-radius: 4px;
+      }
+
+      .shimmer {
+        padding: 5px;
+        width: 95%;
+        height: 120px;
+        margin: 10px auto;
+        background: #ffffff;
+      }
+
+      .shimmer .image-card {
+        height: 120px;
+        width: 100%;
+        float: left;
+        border-radius: 8px;
+      }
+
+      .stroke-shimmer {
+        height: 15px;
+        background: #777;
+        margin-top: 20px;
+      }
+
+      .wrapper-shimmer {
+        width: 0px;
+        animation: fullView 0.5s forwards linear;
+      }
+
+      @keyframes fullView {
+        100% {
+          width: 100%;
+        }
+      }
+
+      .animate-shimmer {
+        animation: shimmer 3s;
+        animation-iteration-count: infinite;
+        background: linear-gradient(
+          to right,
+          #e6e6e6 5%,
+          #cccccc 25%,
+          #e6e6e6 35%
+        );
+        background-size: 1000px 100%;
+      }
+
+      @keyframes shimmer {
+        from {
+          background-position: -1000px 0;
+        }
+
+        to {
+          background-position: 1000px 0;
+        }
+      }
+
+      ::-webkit-scrollbar {
+        width: 2px;
+        /* Lebar scrollbar */
+        height: 2px;
+        /* Tinggi scrollbar (untuk scroll horizontal) */
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #4a90e2, #9013fe);
+        /* Warna track scrollbar */
+        border-radius: 10px;
+        /* Membuat sudut membulat */
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #b6cfc4, #4a90e2);
+        /* Warna saat hover */
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f0f0f0;
+        /* Warna latar belakang track */
+        border-radius: 10px;
+      }
+
+      /* Style untuk Firefox */
+      * {
+        scrollbar-width: thin;
+        /* Membuat scrollbar lebih kecil */
+        scrollbar-color: #b6cfc4 #f0f0f0;
+        /* Warna thumb dan track */
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="bg-white" x-data="{expanded: false}">
+      <div class="px-4 py-3 mx-auto max-w-7xl sm:px-6 lg:px-8 sm-py-0 lg:py-0">
+        <div class="flex items-center justify-between">
+          <!-- Hamburger button & dropdown for mobile (paling kiri) -->
+          <div class="relative lg:hidden flex items-start">
+            <button
+              @click="expanded = !expanded"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-green-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200"
+              aria-label="Toggle menu"
+            >
+              <svg
+                class="h-6 w-6"
+                stroke="currentColor"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+            <nav
+              x-show="expanded"
+              x-transition:enter="transition ease-out duration-200"
+              x-transition:enter-start="opacity-0 -translate-y-2"
+              x-transition:enter-end="opacity-100 translate-y-0"
+              x-transition:leave="transition ease-in duration-150"
+              x-transition:leave-start="opacity-100 translate-y-0"
+              x-transition:leave-end="opacity-0 -translate-y-2"
+              class="absolute left-0 top-full z-50 min-w-[160px] w-max flex flex-col bg-white rounded-xl py-4 space-y-2 shadow-lg border border-gray-200"
+            >
+              <a
+                href="#roadmap"
+                title=""
+                class="px-6 py-2 text-base font-medium text-green-800 transition-all duration-200 rounded hover:bg-green-50 focus:outline-none font-pj focus:ring-1 focus:ring-green-800 focus:ring-offset-2"
+              >
+                Roadmap
+              </a>
+              <a
+                href="#lomba"
+                title=""
+                class="px-6 py-2 text-base font-medium text-green-800 transition-all duration-200 rounded hover:bg-green-50 focus:outline-none font-pj focus:ring-1 focus:ring-green-800 focus:ring-offset-2"
+              >
+                Lomba
+              </a>
+              <a
+                href="https://getstore.razen.co.id/store/ratu-sampah?page=274"
+                title=""
+                class="px-6 py-2 text-base font-medium text-green-800 transition-all duration-200 rounded hover:bg-green-50 focus:outline-none font-pj focus:ring-1 focus:ring-green-800 focus:ring-offset-2"
+              >
+                Galeri
+              </a>
+              <a
+                href="https://ratusampah.smartservice.co.id"
+                title=""
+                class="px-6 py-2 text-base font-medium text-green-800 transition-all duration-200 rounded hover:bg-green-50 focus:outline-none font-pj focus:ring-1 focus:ring-green-800 focus:ring-offset-2"
+              >
+                Angkut Sampah
+              </a>
+              <a
+                href="#"
+                title=""
+                class="px-6 py-2 text-base font-medium text-green-800 transition-all duration-200 rounded hover:bg-green-50 focus:outline-none font-pj focus:ring-1 focus:ring-green-800 focus:ring-offset-2"
+              >
+                Kontak
+              </a>
+            </nav>
+          </div>
+
+          <div class="flex-shrink-0">
+            <a href="#" title="" class="flex">
+              <img
+                class="w-auto h-8 lg:h-12"
+                src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo_hpsn.png"
+                alt=""
+              />
+            </a>
+          </div>
+
+          <div class="flex lg:hidden space-x-3">
+            <img
+              class="w-auto h-8 lg:h-12"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo-kampung-pesilat.png"
+              alt=""
+            />
+            <img
+              class="w-auto h-8 lg:h-12"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/dlh.png"
+              alt=""
+            />
+            <img
+              class="w-auto h-8 lg:h-12"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo-kab-madiun.png"
+              alt=""
+            />
+            <img
+              class="w-auto h-8 lg:h-12"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/Kemen_LHK.png"
+              alt=""
+            />
+          </div>
+
+          <!-- Navbar mobile -->
+          <!-- ...navbar mobile di atas sudah diganti dengan dropdown... -->
+
+          <nav
+            class="hidden lg:flex lg:items-center lg:justify-center lg:space-x-12 bg-green-800 px-10 py-8 rounded-xl custom-bg"
+          >
+            <a
+              href="#roadmap"
+              title=""
+              class="text-base font-medium text-gray-100 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
+            >
+              Roadmap
+            </a>
+
+            <a
+              href="#lomba"
+              title=""
+              class="text-base font-medium text-gray-100 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
+            >
+              Lomba
+            </a>
+
+            <a
+              href="https://getstore.razen.co.id/store/ratu-sampah?page=274"
+              title=""
+              class="text-base font-medium text-gray-100 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
+            >
+              Galeri
+            </a>
+
+            <a
+              href="https://ratusampah.smartservice.co.id"
+              title=""
+              class="text-base font-medium text-gray-100 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
+            >
+              Angkut Sampah
+            </a>
+
+            <a
+              href="#"
+              title=""
+              class="text-base font-medium text-gray-100 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
+            >
+              Kontak
+            </a>
+          </nav>
+
+          <style>
+            .custom-bg {
+              clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
+            }
+          </style>
+
+          <nav
+            class="hidden lg:flex lg:items-center lg:justify-end lg:space-x-3"
+          >
+            <img
+              class="w-auto h-10 lg:h-12"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo-kampung-pesilat.png"
+              alt=""
+            />
+
+            <img
+              class="w-auto h-10 lg:h-12"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/dlh.png"
+              alt=""
+            />
+
+            <img
+              class="w-auto h-10 lg:h-12"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo-kab-madiun.png"
+              alt=""
+            />
+
+            <img
+              class="w-auto h-10 lg:h-12"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/Kemen_LHK.png"
+              alt=""
+            />
+          </nav>
+        </div>
+
+        <!-- <nav x-show="expanded" x-collapse>
+            <div class="px-1 py-8">
+                <div class="grid gap-y-7">
+                    <a href="#" title="" class="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Experts </a>
+
+                    <a href="#" title="" class="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Community Groups </a>
+
+                    <a href="#" title="" class="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Support </a>
+
+                    <a href="#" title="" class="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Login </a>
+
+                    <a
+                        href="#"
+                        title=""
+                        class="
+                            inline-flex
+                            items-center
+                            justify-center
+                            px-5
+                            py-2
+                            text-base
+                            font-semibold
+                            leading-7
+                            text-gray-900
+                            transition-all
+                            duration-200
+                            bg-transparent
+                            border border-gray-900
+                            rounded-xl
+                            font-pj
+                            focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900
+                            hover:bg-gray-900 hover:text-white
+                            focus:bg-gray-900 focus:text-white
+                        "
+                        role="button"
+                    >
+                        Join community
+                    </a>
+                </div>
+            </div>
+        </nav> -->
+      </div>
+    </header>
+
+    <section class="bg-green-800 relative py-12 sm:py-16 lg:pt-20">
+      <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+        <div
+          class="grid grid-cols-1 gap-y-8 lg:items-center lg:grid-cols-2 sm:gap-y-20 xl:grid-cols-5"
+        >
+          <div class="text-center xl:col-span-2 lg:text-left md:px-16 lg:px-0">
+            <div class="max-w-xs mx-auto sm:max-w-lg md:max-w-full">
+              <p
+                class="text-lg md:text-2xl lg:text-3xl text-gray-100 font-pj font-semibold"
+              >
+                Peringatan
+              </p>
+              <h1
+                class="text-4xl font-bold leading-tight text-gray-100 sm:text-5xl sm:leading-tight md:text-4xl lg:text-6xl lg:leading-tight font-pj"
+              >
+                Hari Peduli Sampah Nasional
+              </h1>
+              <p class="text-sm md:text-lg lg:text-lg text-gray-100 font-pj">
+                Kolaborasi Untuk Indonesia Bersih
+              </p>
+
+              <p class="text-sm md:text-lg lg:text-lg text-gray-100 font-pj">
+                "Transformasi Sampah Menuju Ekonomi Sirkular"
+              </p>
+            </div>
+            <div class="mt-2 lg:mt-4 space-y-6 lg:space-y-0 lg:space-x-4">
+              <a
+                href="https://hpsn.smartservice.co.id/login"
+                title=""
+                class="relative inline-flex items-center justify-center px-8 py-3 sm:text-sm sm:py-3.5 text-base font-semibold text-white transition-all duration-200 border border-green-300 rounded-lg hover:bg-green-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
+                role="button"
+              >
+                Login
+              </a>
+
+              <a
+                href="https://hpsn.smartservice.co.id/register"
+                title=""
+                class="relative inline-flex items-center justify-center px-8 py-3 sm:text-sm sm:py-3.5 text-base font-semibold text-white transition-all duration-200 bg-green-400 border border-transparent rounded-lg hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600"
+                role="button"
+              >
+                Daftar Sekarang
+              </a>
+            </div>
+            <div class="mt-2 lg:mt-4 space-y-6 lg:space-y-0 lg:space-x-4">
+              <a
+                href="https://twibbo.nz/hpsn-kabupaten-madiun-feed"
+                title=""
+                class="relative inline-flex items-center justify-center px-4 py-3 sm:text-sm sm:py-3.5 text-base font-semibold text-white transition-all duration-200 border border-orange-300 rounded-lg hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
+                role="button"
+                target="_blank"
+              >
+                Twibbon Feed
+              </a>
+
+              <a
+                href="https://twibbo.nz/hpsn-kabupaten-madiun-story"
+                title=""
+                class="relative inline-flex items-center justify-center px-4 py-3 sm:text-sm sm:py-3.5 text-base font-semibold text-white transition-all duration-200 border border-orange-300 rounded-lg hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
+                role="button"
+                target="_blank"
+              >
+                Twibbon Story
+              </a>
+
+              <a
+                href="https://twibbo.nz/hpsn-kabupaten-madiun-profil"
+                title=""
+                class="relative inline-flex items-center justify-center px-4 py-3 sm:text-sm sm:py-3.5 text-base font-semibold text-white transition-all duration-200 border border-orange-300 rounded-lg hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
+                role="button"
+                target="_blank"
+              >
+                Twibbon Profile
+              </a>
+            </div>
+          </div>
+
+          <div class="xl:col-span-3">
+            <img
+              class="w-full mx-auto scale-110"
+              src="https://hpsn.smartservice.co.id/landing-page/img/mobil-hpsn.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      /* Animasi scrolling kiri */
+      .animate-scroll-left {
+        animation: scroll-left 60s linear infinite;
+      }
+
+      /* Keyframes animasi scroll kiri */
+      @keyframes scroll-left {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      .image-fit {
+        height: 70px;
+        /* Adjust as necessary */
+        min-width: 90px;
+        max-width: 200px;
+        object-fit: contain;
+        display: block;
+        margin: auto;
+      }
+    </style>
+
+    <section
+      class="py-8 bg-white sm:py-10 lg:py-10 xl:py-10 relative overflow-hidden"
+    >
+      <!-- bagian bgone -->
+      <div class="absolute left-0 z-10">
+        <div
+          class="w-52 h-96 bg-gradient-to-l from-transparent to-white opacity-100"
+        ></div>
+      </div>
+
+      <!-- bagian bgtwo -->
+      <div class="absolute right-0 z-20">
+        <div
+          class="w-52 h-96 bg-gradient-to-r from-transparent to-white opacity-100"
+        ></div>
+      </div>
+
+      <!-- bagian satu -->
+      <div class="relative w-full overflow-hidden">
+        <div class="flex gap-4 animate-scroll-left">
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/dlh.png"
+              alt="Reward 1"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo-kab-madiun.png"
+              alt="Reward 2"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo-kampung-pesilat.png"
+              alt="Reward 3"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo_hpsn.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/hpsn25.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/bankjatim.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/inka.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/yoiki.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/dlh.png"
+              alt="Reward 1"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo-kab-madiun.png"
+              alt="Reward 2"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo-kampung-pesilat.png"
+              alt="Reward 3"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo_hpsn.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/hpsn25.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/bankjatim.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/inka.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/yoiki.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/dlh.png"
+              alt="Reward 1"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo-kab-madiun.png"
+              alt="Reward 2"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo-kampung-pesilat.png"
+              alt="Reward 3"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo_hpsn.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/hpsn25.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/bankjatim.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/inka.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/yoiki.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/dlh.png"
+              alt="Reward 1"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo-kab-madiun.png"
+              alt="Reward 2"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo-kampung-pesilat.png"
+              alt="Reward 3"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo_hpsn.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/hpsn25.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/bankjatim.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/inka.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/yoiki.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/dlh.png"
+              alt="Reward 1"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo-kab-madiun.png"
+              alt="Reward 2"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo-kampung-pesilat.png"
+              alt="Reward 3"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo_hpsn.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/hpsn25.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/bankjatim.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/inka.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/yoiki.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/dlh.png"
+              alt="Reward 1"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo-kab-madiun.png"
+              alt="Reward 2"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo-kampung-pesilat.png"
+              alt="Reward 3"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo_hpsn.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/hpsn25.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/bankjatim.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/inka.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/yoiki.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/dlh.png"
+              alt="Reward 1"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo-kab-madiun.png"
+              alt="Reward 2"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo-kampung-pesilat.png"
+              alt="Reward 3"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo_hpsn.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/hpsn25.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/bankjatim.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/inka.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/yoiki.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/dlh.png"
+              alt="Reward 1"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo-kab-madiun.png"
+              alt="Reward 2"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo-kampung-pesilat.png"
+              alt="Reward 3"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo_hpsn.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/hpsn25.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/bankjatim.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/inka.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/yoiki.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/dlh.png"
+              alt="Reward 1"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo-kab-madiun.png"
+              alt="Reward 2"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo-kampung-pesilat.png"
+              alt="Reward 3"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/logo_hpsn.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/hpsn25.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/bankjatim.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/inka.png"
+              alt="Reward 4"
+            />
+          </div>
+          <div
+            class="inline-flex items-center justify-center rounded-xl shrink-0"
+          >
+            <img
+              class="image-fit"
+              src="https://hpsn.smartservice.co.id/landing-page/img/logo/yoiki.png"
+              alt="Reward 4"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- roadmap -->
+    <section id="roadmap" class="py-3 bg-gray-50 sm:py-12 lg:py-12">
+      <div class="text-center sm:mx-auto sm:text-center lg:max-w-7xl">
+        <!-- Gambar utama besar -->
+        <img
+          class="w-full max-w-4xl mx-auto"
+          src="https://hpsn.smartservice.co.id/landing-page/img/Thumbnail_HPSN.png"
+          alt="Roadmap utama"
+        />
+      </div>
+
+      <div class="mt-5"></div>
+      <div class="mt-5"></div>
+      <div class="mt-5"></div>
+      <div class="mt-5"></div>
+
+      <div class="text-center sm:mx-auto sm:text-center lg:max-w-7xl">
+        <img
+          class="inline-flex items-center justify-center"
+          src="https://hpsn.smartservice.co.id/landing-page/img/roadmap1.png"
+          alt=""
+        />
+      </div>
+      <div class="mt-5 px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+        <div class="grid items-start grid-cols-1 lg:grid-cols-2 gap-y-12">
+          <div class="grid overflow-hidde lg:order-2">
+            <div
+              class="grid items-start grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-y-0 lg:gap-y-12"
+            >
+              <div>
+                <div class="flex items-start">
+                  <img
+                    src="https://hpsn.smartservice.co.id/landing-page/img/one.png"
+                    alt=""
+                  />
+                  <div class="ml-3 py-3">
+                    <h3 class="text-normal lg:text-lg font-semibold text-black">
+                      Rapat Koordinasi di Kantor Pusat Kabupaten Madiun
+                    </h3>
+                    <p class="mt-2 text-base text-gray-600">
+                      Selasa, 18 Februari 2025
+                    </p>
+                    <p class="mt-2 text-base text-gray-600">
+                      di Gedung Pemerintah Kab. Madiun
+                    </p>
+                    <p class="mt-2 text-base text-gray-600">
+                      Waktu : Menyesuaikan
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <img
+                    src="https://hpsn.smartservice.co.id/landing-page/img/two.png"
+                    alt=""
+                  />
+                  <div class="ml-3 py-3">
+                    <h3 class="text-normal lg:text-lg font-semibold text-black">
+                      Podcast RRI
+                    </h3>
+                    <p class="mt-2 text-base text-gray-600">
+                      Jum'at, 21 Februari 2025
+                    </p>
+                    <p class="mt-2 text-base text-gray-600">
+                      di Gedung RRI Madiun
+                    </p>
+                    <p class="mt-2 text-base text-gray-600">
+                      Waktu : Menyesuaikan
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <img
+                    src="https://hpsn.smartservice.co.id/landing-page/img/three.png"
+                    alt=""
+                  />
+                  <div class="ml-3 py-3">
+                    <h3 class="text-normal lg:text-lg font-semibold text-black">
+                      Aksi Bersih Asta Desa
+                    </h3>
+                    <p class="mt-2 text-base text-gray-600">
+                      Minggu, 23 Februari 2025
+                    </p>
+                    <p class="mt-2 text-base text-gray-600">
+                      di Seluruh Desa Se-Kabupaten Madiun
+                    </p>
+                    <p class="mt-2 text-base text-gray-600">
+                      Waktu : 06.30 - 10.00 WIB
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <img
+                    src="https://hpsn.smartservice.co.id/landing-page/img/four.png"
+                    alt=""
+                  />
+                  <div class="ml-3 py-3">
+                    <h3 class="text-normal lg:text-lg font-semibold text-black">
+                      Aksi Bersih Asta Pasar Desa
+                    </h3>
+                    <p class="mt-2 text-base text-gray-600">
+                      Selasa, 25 Februari 2025
+                    </p>
+                    <p class="mt-2 text-base text-gray-600">
+                      di Seluruh Pasar Desa Se-Kabupaten Madiun
+                    </p>
+                    <p class="mt-2 text-base text-gray-600">
+                      Waktu : 06.30 - 10.00 WIB
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex items-start">
+                  <img
+                    src="https://hpsn.smartservice.co.id/landing-page/img/five.png"
+                    alt=""
+                  />
+                  <div class="ml-3 py-3">
+                    <h3 class="text-normal lg:text-lg font-semibold text-black">
+                      Aksi Bersih Asta Pondok Pesantren
+                    </h3>
+                    <p class="mt-2 text-base text-gray-600">
+                      Selasa, 25 Februari 2025
+                    </p>
+                    <p class="mt-2 text-base text-gray-600">
+                      di Seluruh Pondok Pesantren Se-Kabupaten Madiun
+                    </p>
+                    <p class="mt-2 text-base text-gray-600">
+                      Waktu : 06.30 - 10.00 WIB
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <img
+                    src="https://hpsn.smartservice.co.id/landing-page/img/six.png"
+                    alt=""
+                  />
+                  <div class="ml-3 py-3">
+                    <h3 class="text-normal lg:text-lg font-semibold text-black">
+                      Aksi Bersih Asta Sekolah
+                    </h3>
+                    <p class="mt-2 text-base text-gray-600">
+                      Selasa, 25 Februari 2025
+                    </p>
+                    <p class="mt-2 text-base text-gray-600">
+                      di Seluruh Sekolah Se-Kabupaten Madiun
+                    </p>
+                    <p class="mt-2 text-base text-gray-600">
+                      Waktu : 06.30 - 10.00 WIB
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <img
+                    src="https://hpsn.smartservice.co.id/landing-page/img/seven.png"
+                    alt=""
+                  />
+                  <div class="ml-3 py-3">
+                    <h3 class="text-normal lg:text-lg font-semibold text-black">
+                      Evaluasi
+                    </h3>
+                    <p class="mt-2 text-base text-gray-600">
+                      Selasa, 27 Februari 2025
+                    </p>
+                    <p class="mt-2 text-base text-gray-600">
+                      di Rumah Makan Icha Caruban
+                    </p>
+                    <p class="mt-2 text-base text-gray-600">
+                      Waktu : 08.00 - 14.25 WIB
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div class="ml-3 py-3">
+                    <h3 class="text-normal lg:text-lg font-bold text-green-700">
+                      Penilaian Asta Aksi Peduli Sampah
+                    </h3>
+                    <ol class="list-decimal text-lg px-5">
+                      <li class="mt-2 text-base text-gray-600">
+                        Seluruh Desa Se-Kabupaten Madiun
+                      </li>
+                      <li class="mt-2 text-base text-gray-600">
+                        Seluruh Pasar Desa Se-Kabupaten Madiun
+                      </li>
+                      <li class="mt-2 text-base text-gray-600">
+                        Seluruh Pondok Pesantren Se-Kabupaten Madiun
+                      </li>
+                      <li class="mt-2 text-base text-gray-600">
+                        Seluruh Sekolah Se-Kabupaten Madiun
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="xl:pr-18 lg:order-1 text-center">
+            <img
+              class="inline-flex items-center justify-center"
+              src="https://hpsn.smartservice.co.id/landing-page/img/roadmap.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- seminar -->
+    <!-- <section id="seminar" class="py-10 bg-gray-50 sm:py-12 lg:py-12">
+    <div class="text-center sm:mx-auto sm:text-center lg:max-w-7xl">
+        <h2 class="text-xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-pj">Seminar HPSN 2025</h2>
+    </div>
+    <div class="px-4 mx-auto max-w-5xl sm:px-6 lg:px-8">
+        <img class="w-full mx-auto" src="https://hpsn.smartservice.co.id/landing-page/img/seminar.png" alt="" />
+    </div>
+</section> -->
+
+    <!-- detail -->
+    <section class="py-10 bg-gray-50 sm:py-12 lg:py-12">
+      <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <!-- mode desktop & laptop & tablet -->
+        <div class="hidden sm:block">
+          <div class="swiper mySwiperDesktop">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide !grid grid-cols-2 gap-4 items-center">
+                <img
+                  class="w-full"
+                  src="https://hpsn.smartservice.co.id/landing-page/img/roadmaptwo.png"
+                  alt=""
+                />
+                <img
+                  class="w-full"
+                  src="https://hpsn.smartservice.co.id/landing-page/img/roadmapthree.png"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide !grid grid-cols-2 gap-4 items-center">
+                <img
+                  class="w-full"
+                  src="https://hpsn.smartservice.co.id/landing-page/img/roadmapfour.png"
+                  alt=""
+                />
+                <img
+                  class="w-full"
+                  src="https://hpsn.smartservice.co.id/landing-page/img/roadmapfive.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+        <!-- mode mobile -->
+        <div class="block sm:hidden">
+          <div class="swiper mySwiperMobile">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide items-center">
+                <img
+                  class="w-full"
+                  src="https://hpsn.smartservice.co.id/landing-page/img/roadmaptwo.png"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide items-center">
+                <img
+                  class="w-full"
+                  src="https://hpsn.smartservice.co.id/landing-page/img/roadmapthree.png"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide items-center">
+                <img
+                  class="w-full"
+                  src="https://hpsn.smartservice.co.id/landing-page/img/roadmapfour.png"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide items-center">
+                <img
+                  class="w-full"
+                  src="https://hpsn.smartservice.co.id/landing-page/img/roadmapfive.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- lomba -->
+    <!-- <section id="lomba" class="py-3 bg-gray-50 sm:py-12 lg:py-12">
+    <div class="text-center sm:mx-auto sm:text-center lg:max-w-7xl">
+        <h2 class="text-xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-pj">Lomba HPSN 2025
+        </h2>
+        <p class="mt-2 text-lg text-gray-700 md:max-w-2xl md:mx-auto sm:mt-4 font-pj">Ayo ikut Lomba HPSN 2025 Kabupaten Madiun dan
+            jadilah bagian dari perubahan! 🌱♻️</p>
+    </div>
+    <div class="py-10 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:items-center gap-y-8 md:grid-cols-2 md:gap-x-16">
+            <div>
+                <img class="w-full max-w-lg mx-auto" src="https://hpsn.smartservice.co.id/landing-page/img/Teka-teki.png" alt="" />
+            </div>
+
+            <div>
+                <img class="w-full max-w-lg mx-auto" src="https://hpsn.smartservice.co.id/landing-page/img/Quiz.png" alt="" />
+            </div>
+        </div>
+    </div>
+</section> -->
+
+    <section id="lomba" class="py-3 bg-gray-50 sm:py-12 lg:py-12">
+      <div class="text-center sm:mx-auto sm:text-center lg:max-w-7xl">
+        <h2
+          class="text-xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-pj"
+        >
+          Lomba HPSN 2025
+        </h2>
+        <p
+          class="mt-2 text-lg text-gray-700 md:max-w-2xl md:mx-auto sm:mt-4 font-pj"
+        >
+          Ayo ikut Lomba HPSN 2025 Kabupaten Madiun dan jadilah bagian dari
+          perubahan! 🌱♻️
+        </p>
+      </div>
+      <div class="mt-10 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div
+          class="grid items-start grid-cols-1 lg:grid-cols-2 md:gap-x-20 gap-y-10"
+        >
+          <div class="rounded-lg shadow-lg">
+            <img
+              class="w-full mx-auto"
+              src="https://hpsn.smartservice.co.id/landing-page/img/lomba-teka-teki.png"
+              alt=""
+            />
+          </div>
+
+          <div class="lg:pr-12">
+            <h2
+              class="text-lg text-center sm:mx-auto sm:text-center items-start font-bold text-gray-900 sm:text-xl xl:text-3xl font-pj"
+            >
+              Lomba Teka - Teki Silang
+            </h2>
+            <div
+              class="mt-5 inline-flex px-4 py-1.5 mx-auto rounded-md bg-green-700"
+            >
+              <p class="text-xs font-semibold text-white uppercase">Syarat</p>
+            </div>
+            <div class="mt-3">
+              <ol class="list-decimal text-lg px-5">
+                <li>
+                  Terbuka untuk seluruh masyarakat Kabupaten Madiun (KTP
+                  Kabupaten Madiun)
+                </li>
+                <li>Berusia minimal 17 tahun</li>
+                <li>
+                  Melakukan registrasi di link
+                  <a
+                    class="text-blue-600"
+                    href="https://hpsn.smartservice.co.id/register"
+                    >https://bit.ly/HPSN2025</a
+                  >
+                </li>
+              </ol>
+            </div>
+
+            <div
+              class="mt-5 inline-flex px-4 py-1.5 mx-auto rounded-md bg-green-700"
+            >
+              <p class="text-xs font-semibold text-white uppercase">
+                Ketentuan
+              </p>
+            </div>
+            <div class="mt-3">
+              <ol class="list-decimal text-lg px-5">
+                <li>Satu peserta memiliki kesempatan 1 kali pengumpulan</li>
+                <li>
+                  TTS dikerjakan dengan tulisan tangan yang jelas dan rapi
+                </li>
+                <li>
+                  Pengumpulan diserahkan dihari H peringatan HPSN 2025 Kabupaten
+                  Madiun
+                </li>
+                <li>
+                  Keputusan juri bersifat mutlak dan tidak dapat diganggu gugat
+                </li>
+                <li>
+                  Jawaban yang tidak lengkap atau tidak sesuai ketentuan akan
+                  didiskualifikasi
+                </li>
+                <li>
+                  Peserta wajib mengisi formulir pendaftaran dengan data yang
+                  benar
+                </li>
+                <li>
+                  Pemenang akan dipilih dari yang tercepat mengumpulkan dan
+                  paling benar
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10 lg:mt-20 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div
+          class="grid items-center grid-cols-1 lg:grid-cols-2 md:gap-x-20 gap-y-10"
+        >
+          <div class="relative lg:order-2">
+            <img
+              class="w-full mx-auto"
+              src="https://hpsn.smartservice.co.id/landing-page/img/lomba-quiz.png"
+              alt=""
+            />
+          </div>
+
+          <div class="md:order-1">
+            <h2
+              class="text-lg text-center sm:mx-auto sm:text-center items-start font-bold text-gray-900 sm:text-xl xl:text-3xl font-pj"
+            >
+              Lomba Quiz
+            </h2>
+            <div
+              class="mt-5 inline-flex px-4 py-1.5 mx-auto rounded-md bg-green-700"
+            >
+              <p class="text-xs font-semibold text-white uppercase">
+                Mekanisme
+              </p>
+            </div>
+            <div class="mt-3">
+              <ol class="list-decimal text-lg px-5">
+                <li>
+                  Melakukan registrasi di link & hadir di Seminar HPSN 2025
+                </li>
+                <li>
+                  Masukan code yang telah disiapkan panitia saat sesi quiz
+                </li>
+                <li>Jawab pertanyaan dengan cepat dan tepat</li>
+              </ol>
+            </div>
+
+            <div
+              class="mt-5 inline-flex px-4 py-1.5 mx-auto rounded-md bg-green-700"
+            >
+              <p class="text-xs font-semibold text-white uppercase">
+                Syarat & Ketentuan
+              </p>
+            </div>
+            <div class="mt-3">
+              <ol class="list-decimal text-lg px-5">
+                <li>
+                  Wajib melakukan registrasi di
+                  <a
+                    class="text-blue-600"
+                    href="https://hpsn.smartservice.co.id/register"
+                    >https://bit.ly/HPSN2025</a
+                  >
+                </li>
+                <li>
+                  Wajib membawa smartphone dengan koneksi internet yang baik
+                </li>
+                <li>Satu peserta hanya menggunakan satu perangkat</li>
+                <li>Pemenang akan ditentukan dengan kecepatan dan ketepatan</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 bg-gray-50 sm:py-16 lg:py-20 xl:py-24">
+      <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+        <div class="max-w-2xl mx-auto text-center">
+          <h2
+            class="text-xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-pj"
+          >
+            Tanya Jawab Seputar HPSN
+          </h2>
+          <p
+            class="mt-4 text-base font-normal leading-7 text-gray-600 lg:text-lg lg:mt-6 lg:leading-8"
+          >
+            Semua informasi penting tentang acara dan lomba
+          </p>
+        </div>
+
+        <div
+          class="max-w-5xl mx-auto mt-12 overflow-hidden border border-gray-200 divide-y divide-gray-200 sm:mt-16 rounded-xl"
+          x-data="{ active: 1 }"
+        >
+          <div
+            x-data="{
+                            id: 1,
+                            get expanded() {
+                                return this.active === this.id
+                            },
+                            set expanded(value) {
+                                this.active = value ? this.id : null
+                            },
+                        }"
+            role="region"
+          >
+            <h3>
+              <button
+                @click="expanded = !expanded"
+                :aria-expanded="expanded"
+                class="flex items-center justify-between w-full px-6 py-5 text-lg font-semibold text-left text-gray-900 sm:p-6"
+              >
+                <span> Apa itu HPSN 2025 Kabupaten Madiun? </span>
+                <span x-show="expanded" aria-hidden="true" class="ml-4">
+                  <svg
+                    class="w-6 h-6 text-gray-900"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M20 12H4"
+                    />
+                  </svg>
+                </span>
+                <span x-show="!expanded" aria-hidden="true" class="ml-4">
+                  <svg
+                    class="w-6 h-6 text-gray-900"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 4v16m8-8H4"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </h3>
+
+            <div x-show="expanded" x-collapse>
+              <div class="px-6 pb-6">
+                <p class="text-base text-gray-600">
+                  HPSN 2025 Kabupaten Madiun adalah peringatan Hari Peduli
+                  Sampah Nasional dengan slogan "Kolaborasi Untuk Indonesia
+                  Bersih: Transformasi Sampah Menuju Ekonomi Sirkular." Acara
+                  ini mencakup aksi peduli sampah se Kabupaten Madiun, Lomba
+                  dengan jutaan rupiah , hingga peringatan hari peduli sampah
+                  nasional.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            x-data="{
+                                          id: 2,
+                                          get expanded() {
+                                              return this.active === this.id
+                                          },
+                                          set expanded(value) {
+                                              this.active = value ? this.id : null
+                                          },
+                                      }"
+            role="region"
+          >
+            <h3>
+              <button
+                @click="expanded = !expanded"
+                :aria-expanded="expanded"
+                class="flex items-center justify-between w-full px-6 py-5 text-lg font-semibold text-left text-gray-900 sm:p-6"
+              >
+                <span>
+                  Siapa saja yang dapat berpartisipasi dalam HPSN 2025 Kabupaten
+                  Madiun?
+                </span>
+                <span x-show="expanded" aria-hidden="true" class="ml-4">
+                  <svg
+                    class="w-6 h-6 text-gray-900"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M20 12H4"
+                    />
+                  </svg>
+                </span>
+                <span x-show="!expanded" aria-hidden="true" class="ml-4">
+                  <svg
+                    class="w-6 h-6 text-gray-900"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 4v16m8-8H4"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </h3>
+
+            <div x-show="expanded" x-collapse>
+              <div class="px-6 pb-6">
+                <ul class="ml-5 list-disc">
+                  <li>
+                    Seluruh masyarakat Kabupaten Madiun dapat mengikuti acara
+                    ini.
+                  </li>
+                  <li>
+                    Lomba TTS dapat diikuti oleh peserta berusia minimal 17
+                    tahun.
+                  </li>
+                  <li>
+                    Kuis interaktif dapat diikuti oleh peserta yang hadir secara
+                    onine maupun offline dalam Evaluasi HPSN 2025 Kabupaten
+                    Madiun.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div
+            x-data="{
+                                                      id: 3,
+                                                      get expanded() {
+                                                          return this.active === this.id
+                                                      },
+                                                      set expanded(value) {
+                                                          this.active = value ? this.id : null
+                                                      },
+                                                  }"
+            role="region"
+          >
+            <h3>
+              <button
+                @click="expanded = !expanded"
+                :aria-expanded="expanded"
+                class="flex items-center justify-between w-full px-6 py-5 text-lg font-semibold text-left text-gray-900 sm:p-6"
+              >
+                <span>Kapan HPSN 2025 Kabupaten Madiun dilaksanakan?</span>
+                <span x-show="expanded" aria-hidden="true" class="ml-4">
+                  <svg
+                    class="w-6 h-6 text-gray-900"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M20 12H4"
+                    />
+                  </svg>
+                </span>
+                <span x-show="!expanded" aria-hidden="true" class="ml-4">
+                  <svg
+                    class="w-6 h-6 text-gray-900"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 4v16m8-8H4"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </h3>
+
+            <div x-show="expanded" x-collapse>
+              <div class="px-6 pb-6">
+                <ul class="ml-5 list-disc">
+                  <li>
+                    Rangkaian acara akan berlangsung dari tanggal 18 - 27
+                    Februari 2025
+                  </li>
+                  <li>
+                    Pengumpulan hasil Lomba TTS dilakukan pada hari kamis 27
+                    februari 2025.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div
+            x-data="{
+                                                        id: 4,
+                                                        get expanded() {
+                                                            return this.active === this.id
+                                                        },
+                                                        set expanded(value) {
+                                                            this.active = value ? this.id : null
+                                                        },
+                                                    }"
+            role="region"
+          >
+            <h3>
+              <button
+                @click="expanded = !expanded"
+                :aria-expanded="expanded"
+                class="flex items-center justify-between w-full px-6 py-5 text-lg font-semibold text-left text-gray-900 sm:p-6"
+              >
+                <span>
+                  Di mana lokasi Evaluasi HPSN 2025 Kabupaten Madiun?
+                </span>
+                <span x-show="expanded" aria-hidden="true" class="ml-4">
+                  <svg
+                    class="w-6 h-6 text-gray-900"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M20 12H4"
+                    />
+                  </svg>
+                </span>
+                <span x-show="!expanded" aria-hidden="true" class="ml-4">
+                  <svg
+                    class="w-6 h-6 text-gray-900"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 4v16m8-8H4"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </h3>
+
+            <div x-show="expanded" x-collapse>
+              <div class="px-6 pb-6">
+                <p>
+                  Evaluasi HPSN 2025 akan berlangsung di Kabupaten Madiun
+                  tepatnya di rumah makan icha caruban.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            x-data="{
+                                                          id: 5,
+                                                          get expanded() {
+                                                              return this.active === this.id
+                                                          },
+                                                          set expanded(value) {
+                                                              this.active = value ? this.id : null
+                                                          },
+                                                      }"
+            role="region"
+          >
+            <h3>
+              <button
+                @click="expanded = !expanded"
+                :aria-expanded="expanded"
+                class="flex items-center justify-between w-full px-6 py-5 text-lg font-semibold text-left text-gray-900 sm:p-6"
+              >
+                <span>
+                  Mengapa HPSN 2025 Kabupaten Madiun diselenggarakan?
+                </span>
+                <span x-show="expanded" aria-hidden="true" class="ml-4">
+                  <svg
+                    class="w-6 h-6 text-gray-900"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M20 12H4"
+                    />
+                  </svg>
+                </span>
+                <span x-show="!expanded" aria-hidden="true" class="ml-4">
+                  <svg
+                    class="w-6 h-6 text-gray-900"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 4v16m8-8H4"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </h3>
+
+            <div x-show="expanded" x-collapse>
+              <div class="px-6 pb-6">
+                <ul class="ml-5 list-disc">
+                  <li>
+                    Untuk meningkatkan kesadaran masyarakat terhadap pentingnya
+                    pengelolaan sampah yang baik.
+                  </li>
+                  <li>
+                    Mendorong penerapan konsep ekonomi sirkular dalam kehidupan
+                    sehari-hari.
+                  </li>
+                  <li>
+                    Mengajak masyarakat berpartisipasi aktif dalam menjaga
+                    lingkungan tetap bersih melalui seminar dan lomba yang
+                    edukatif.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div
+            x-data="{
+                                                            id: 6,
+                                                            get expanded() {
+                                                                return this.active === this.id
+                                                            },
+                                                            set expanded(value) {
+                                                                this.active = value ? this.id : null
+                                                            },
+                                                        }"
+            role="region"
+          >
+            <h3>
+              <button
+                @click="expanded = !expanded"
+                :aria-expanded="expanded"
+                class="flex items-center justify-between w-full px-6 py-5 text-lg font-semibold text-left text-gray-900 sm:p-6"
+              >
+                <span
+                  >Bagaimana cara mengikuti HPSN 2025 Kabupaten Madiun?
+                </span>
+                <span x-show="expanded" aria-hidden="true" class="ml-4">
+                  <svg
+                    class="w-6 h-6 text-gray-900"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M20 12H4"
+                    />
+                  </svg>
+                </span>
+                <span x-show="!expanded" aria-hidden="true" class="ml-4">
+                  <svg
+                    class="w-6 h-6 text-gray-900"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 4v16m8-8H4"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </h3>
+
+            <div x-show="expanded" x-collapse>
+              <div class="px-6 pb-6">
+                <ul class="ml-5 list-disc">
+                  <li>
+                    Evaluasi HPSN:
+                    <ul class="list-decimal ml-5">
+                      <li>
+                        Registrasi di
+                        <a
+                          class="text-blue-600"
+                          href="https://hpsn.smartservice.co.id/register"
+                          >https://bit.ly/HPSN2025</a
+                        >.
+                      </li>
+                      <li>Menglengkapi data</li>
+                      <li>
+                        jika ingin mengikuti lomba tts silahkan unduh tts dan
+                        print. jika tidak tekan tombol selanjutnya
+                      </li>
+                      <li>
+                        Jangan lupa saat acara berlansung, lakukan foto dan
+                        upload ke sistem agar bisa mendapatkan sertifikat
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="mt-4">
+                    Lomba TTS:
+                    <ul class="list-decimal ml-5">
+                      <li>
+                        Registrasi di
+                        <a
+                          class="text-blue-600"
+                          href="https://hpsn.smartservice.co.id/register"
+                          >https://bit.ly/HPSN2025</a
+                        >.
+                      </li>
+                      <li>
+                        Mengerjakan TTS dengan tulisan tangan yang jelas dan
+                        rapi.
+                      </li>
+                      <li>
+                        Mengumpulkan hasil di hari H peringatan HPSN 2025.
+                      </li>
+                      <li>Pemenang akan diumumkan saat acara.</li>
+                    </ul>
+                  </li>
+                  <li class="mt-4">
+                    Kuis Interaktif:
+                    <ul class="list-decimal ml-5">
+                      <li>Registrasi dan hadir dalam Seminar HPSN 2025.</li>
+                      <li>
+                        Membawa smartphone dengan koneksi internet yang baik.
+                      </li>
+                      <li>
+                        Memasukkan kode dari panitia saat sesi kuis berlangsung.
+                      </li>
+                      <li>Menjawab pertanyaan dengan cepat dan tepat.</li>
+                      <li>Pemenang akan diumumkan saat acara.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            x-data="{
+                                                          id: 7,
+                                                          get expanded() {
+                                                              return this.active === this.id
+                                                          },
+                                                          set expanded(value) {
+                                                              this.active = value ? this.id : null
+                                                          },
+                                                      }"
+            role="region"
+          >
+            <h3>
+              <button
+                @click="expanded = !expanded"
+                :aria-expanded="expanded"
+                class="flex items-center justify-between w-full px-6 py-5 text-lg font-semibold text-left text-gray-900 sm:p-6"
+              >
+                <span> Apakah semua peserta mendapatkan Sertifikat? </span>
+                <span x-show="expanded" aria-hidden="true" class="ml-4">
+                  <svg
+                    class="w-6 h-6 text-gray-900"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M20 12H4"
+                    />
+                  </svg>
+                </span>
+                <span x-show="!expanded" aria-hidden="true" class="ml-4">
+                  <svg
+                    class="w-6 h-6 text-gray-900"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 4v16m8-8H4"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </h3>
+
+            <div x-show="expanded" x-collapse>
+              <div class="px-6 pb-6">
+                <p class="text-base text-gray-600">
+                  Ya bagi peserta yang sudah Registrasi
+                  <a
+                    class="text-blue-600"
+                    href="https://hpsn.smartservice.co.id/register"
+                    >https://bit.ly/HPSN2025</a
+                  >
+                  dan sudah mengupload bukti mengikuti Peringatan Hari Peduli
+                  Sampah Nasional
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Whatsapp Button -->
+    <div id="whatsbutton"></div>
+
+    <!-- footer -->
+    <footer class="py-2 bg-green-900">
+      <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+        <div class="pt-2 pb-2 mt-5 text-center border-t border-white">
+          <p class="text-sm font-normal text-gray-300">
+            © Copyright 2025, All Rights Reserved by Dinas Lingkungan Hidup
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://hpsn.smartservice.co.id/landing-page/assets/js/script.js"></script>
+    <script src="https://hpsn.smartservice.co.id/landing-page/assets/js/unduh.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://hpsn.smartservice.co.id/js/jquery.whatsbutton.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      $(document).ready(function () {
+        $("#whatsbutton").whatsbutton({
+          position: "right",
+          name: "HPSN Kab. Madiun 2025",
+          avatar:
+            "https://hpsn.smartservice.co.id/landing-page/img/logo/hpsn_putih_square.png",
+          status: "online",
+          messages: [
+            "Selamat datang HPSN Kab. Madiun 2025",
+            "Ada yang bisa kami bantu?",
+          ],
+          placeholder: "Tulis pesan...",
+          defaultMessage: "Halo, saya ingin bertanya... ",
+          phone: "6281252242315",
+          autoOpen: false,
+        });
+      });
+    </script>
+
+    <!-- SwiperJS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      var swiperDesktop = new Swiper(".mySwiperDesktop", {
+        loop: true,
+        autoplay: {
+          delay: 10000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+
+      var swiperMobile = new Swiper(".mySwiperMobile", {
+        loop: true,
+        autoplay: {
+          delay: 60000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'9738f1272bd0cec6',t:'MTc1NTkzNDYxOA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
