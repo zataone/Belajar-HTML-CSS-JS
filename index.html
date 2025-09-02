@@ -1,86 +1,1117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Belajar HTML , CSS dan JavaScript</title>
+
+    <!-- SEO Meta Tags -->
+    <title>EIGER Adventure | Outdoor Gear & Apparel Indonesia</title>
+    <meta
+      name="description"
+      content="Peralatan outdoor dan apparel berkualitas tinggi untuk petualangan alam. Produk lokal Indonesia dengan standar internasional. Temukan koleksi terbaru tas, sepatu, jaket, dan perlengkapan outdoor lainnya."
+    />
+    <meta
+      name="keywords"
+      content="eiger, adventure, outdoor, tas gunung, sepatu hiking, jaket gunung, perlengkapan hiking, perlengkapan outdoor, adventure gear, indonesia"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.eigeradventure.com/id/" />
+    <meta
+      property="og:title"
+      content="EIGER Adventure | Outdoor Gear & Apparel Indonesia"
+    />
+    <meta
+      property="og:description"
+      content="Peralatan outdoor dan apparel berkualitas tinggi untuk petualangan alam. Produk lokal Indonesia dengan standar internasional."
+    />
+    <meta property="og:image" content="img/eiger-social-preview.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.eigeradventure.com/id/" />
+    <meta
+      property="twitter:title"
+      content="EIGER Adventure | Outdoor Gear & Apparel Indonesia"
+    />
+    <meta
+      property="twitter:description"
+      content="Peralatan outdoor dan apparel berkualitas tinggi untuk petualangan alam. Produk lokal Indonesia dengan standar internasional."
+    />
+    <meta property="twitter:image" content="img/eiger-social-preview.jpg" />
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="img/apple-touch-icon.png"
+      type="image/x-icon"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "EIGER Adventure",
+        "url": "https://www.eigeradventure.com/id/",
+        "logo": "https://www.eigeradventure.com/id/img/logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+62-22-87780780",
+          "contactType": "customer service",
+          "availableLanguage": ["Indonesian", "English"]
+        },
+        "sameAs": [
+          "https://www.facebook.com/eigeradventure",
+          "https://twitter.com/eigeradventure",
+          "https://www.instagram.com/eigeradventure/",
+          "https://www.youtube.com/user/eigerchannel"
+        ]
+      }
+    </script>
   </head>
 
   <body>
-    <header>
+    <!-- Header Navigation -->
+    <header class="glass-nav">
       <div class="container">
-        <!-- Baris utama -->
         <div class="header-main">
           <!-- Logo -->
           <div class="logo">
-            <a href="#"
-              ><img
-                src="https://cdn.rareblocks.xyz/collection/clarity/images/logo.svg"
-                alt="Logo"
-            /></a>
+            <a href="#">
+              <img
+                src="img/logo_white.webp"
+                alt="EIGER Adventure Logo"
+                class="logo-img"
+              />
+            </a>
           </div>
 
-          <!-- Menu kiri (desktop) -->
-          <nav class="menu-left">
-            <a href="#">Features</a>
-            <a href="#">Pricing</a>
-            <a href="#">Automation</a>
+          <!-- Desktop Menu -->
+          <nav class="main-nav">
+            <ul>
+              <li><a href="#new-arrivals">New Arrivals</a></li>
+              <li><a href="#categories">Categories</a></li>
+              <li><a href="#best-sellers">Best Sellers</a></li>
+              <li><a href="#technology">Technology</a></li>
+              <li><a href="#stories">Adventure Stories</a></li>
+            </ul>
           </nav>
 
-          <!-- Menu kanan (desktop) -->
-          <nav class="menu-right">
-            <a href="#">Customer Login</a>
-            <a href="#" class="btn">Sign up</a>
-          </nav>
-
-          <!-- Tombol burger (mobile) -->
-          <button class="burger" id="burger-btn" aria-label="Toggle Menu">
-            <svg
-              id="burger-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              width="28"
-              height="28"
+          <!-- Right Menu -->
+          <div class="nav-right">
+            <a href="#stores" class="nav-link"
+              ><i class="fas fa-map-marker-alt"></i> Find Store</a
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
+            <a href="#" class="nav-link"><i class="fas fa-search"></i></a>
+            <a
+              href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20produk%20EIGER.%20Bisa%20saya%20tanya-tanya%20lebih%20lanjut?"
+              class="btn btn-primary"
+              ><i class="fab fa-whatsapp"></i> Shop Now</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button class="burger" id="burger-btn" aria-label="Toggle Menu">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
           </button>
         </div>
+      </div>
 
-        <!-- Menu mobile -->
-        <div class="mobile-menu" id="mobile-menu">
-          <a href="#">Features</a>
-          <a href="#">Pricing</a>
-          <a href="#">Automation</a>
-          <a href="#">Customer Login</a>
-          <a href="#" class="btn">Sign up</a>
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobile-menu">
+        <div class="container">
+          <ul>
+            <li><a href="#new-arrivals">New Arrivals</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#best-sellers">Best Sellers</a></li>
+            <li><a href="#technology">Technology</a></li>
+            <li><a href="#stories">Adventure Stories</a></li>
+            <li><a href="#stores">Find Store</a></li>
+            <li>
+              <a
+                href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20produk%20EIGER.%20Bisa%20saya%20tanya-tanya%20lebih%20lanjut?"
+                class="btn btn-primary"
+                ><i class="fab fa-whatsapp"></i> Shop Now</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
     </header>
 
-    <h1 class="title">Quality resources shared by the community</h1>
-    <div class="centered">
-      <p class="description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vehicula massa
-        in enim luctus. Rutrum arcu.
-      </p>
-    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-slider" id="hero-slider">
+        <div class="hero-slide active">
+          <div
+            class="hero-image"
+            style="background-image: url('img/hero-1.jpg')"
+          >
+            <div class="container">
+              <div class="hero-content" data-aos="fade-right">
+                <span class="hero-label">New Collection 2025</span>
+                <h1>Explore The Wilderness</h1>
+                <p>
+                  Premium outdoor gear designed for the most challenging
+                  adventures
+                </p>
+                <div class="hero-cta">
+                  <a href="#" class="btn btn-primary btn-lg"
+                    >Explore Collection</a
+                  >
+                  <a href="#technology" class="btn btn-outline"
+                    >Our Technology</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-slide">
+          <div
+            class="hero-image"
+            style="background-image: url('img/hero-2.jpg')"
+          >
+            <div class="container">
+              <div class="hero-content" data-aos="fade-right">
+                <span class="hero-label">Limited Edition</span>
+                <h1>Adventure Starts Here</h1>
+                <p>Equip yourself with gear that pushes boundaries</p>
+                <div class="hero-cta">
+                  <a href="#" class="btn btn-primary btn-lg">Shop Now</a>
+                  <a href="#best-sellers" class="btn btn-outline"
+                    >Best Sellers</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-slider-controls">
+          <div class="container">
+            <div class="slider-dots">
+              <span class="dot active" data-slide="0"></span>
+              <span class="dot" data-slide="1"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="centered">
-      <button type="button">Get Access</button>
-    </div>
+    <!-- Featured Products Section -->
+    <section class="featured-products" id="new-arrivals">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">New Arrivals</span>
+          <h2>Latest Outdoor Gear</h2>
+          <p class="section-subtitle">
+            Discover our newest innovations for your adventures
+          </p>
+        </div>
 
-    <div class="image-container">
-      <img class="image" src="img/illustration.png" alt="Community" />
-    </div>
+        <div class="featured-grid">
+          <div class="featured-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-badge">New</div>
+            <div class="featured-image">
+              <img
+                src="img/product-1.jpg"
+                alt="Eiger Rhinos 45L Carrier Backpack"
+              />
+              <div class="featured-actions">
+                <button class="action-btn">
+                  <i class="fas fa-search"></i>
+                </button>
+                <button class="action-btn"><i class="fas fa-heart"></i></button>
+              </div>
+            </div>
+            <div class="featured-details">
+              <span class="product-category">Backpacks</span>
+              <h3>Rhinos 45L Carrier</h3>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>4.7 (124)</span>
+              </div>
+              <div class="product-price">
+                <span class="current-price">Rp 1,499,000</span>
+              </div>
+              <a
+                href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20produk%20Eiger%20Rhinos%2045L%20Carrier%20(Rp%201.499.000).%20Apakah%20masih%20tersedia?"
+                class="btn btn-whatsapp btn-block"
+                ><i class="fab fa-whatsapp"></i> Beli via WhatsApp</a
+              >
+            </div>
+          </div>
+
+          <div class="featured-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="product-badge">Best Seller</div>
+            <div class="featured-image">
+              <img
+                src="img/product-2.jpg"
+                alt="Eiger Alpine Pro Hiking Shoes"
+              />
+              <div class="featured-actions">
+                <button class="action-btn">
+                  <i class="fas fa-search"></i>
+                </button>
+                <button class="action-btn"><i class="fas fa-heart"></i></button>
+              </div>
+            </div>
+            <div class="featured-details">
+              <span class="product-category">Footwear</span>
+              <h3>Alpine Pro Hiking Shoes</h3>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>4.9 (98)</span>
+              </div>
+              <div class="product-price">
+                <span class="current-price">Rp 1,250,000</span>
+              </div>
+              <a
+                href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20produk%20Eiger%20Alpine%20Pro%20Hiking%20Shoes%20(Rp%201.250.000).%20Apakah%20masih%20tersedia?"
+                class="btn btn-whatsapp btn-block"
+                ><i class="fab fa-whatsapp"></i> Beli via WhatsApp</a
+              >
+            </div>
+          </div>
+
+          <div class="featured-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="product-badge">New</div>
+            <div class="featured-image">
+              <img
+                src="img/product-3.jpg"
+                alt="Eiger Trihorn Waterproof Jacket"
+              />
+              <div class="featured-actions">
+                <button class="action-btn">
+                  <i class="fas fa-search"></i>
+                </button>
+                <button class="action-btn"><i class="fas fa-heart"></i></button>
+              </div>
+            </div>
+            <div class="featured-details">
+              <span class="product-category">Apparel</span>
+              <h3>Trihorn Waterproof Jacket</h3>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>5.0 (56)</span>
+              </div>
+              <div class="product-price">
+                <span class="current-price">Rp 1,899,000</span>
+              </div>
+              <a
+                href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20produk%20Eiger%20Trihorn%20Waterproof%20Jacket%20(Rp%201.899.000).%20Apakah%20masih%20tersedia?"
+                class="btn btn-whatsapp btn-block"
+                ><i class="fab fa-whatsapp"></i> Beli via WhatsApp</a
+              >
+            </div>
+          </div>
+
+          <div class="featured-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="featured-image">
+              <img
+                src="img/product-4.jpg"
+                alt="Eiger Summit Pro Trekking Pole"
+              />
+              <div class="featured-actions">
+                <button class="action-btn">
+                  <i class="fas fa-search"></i>
+                </button>
+                <button class="action-btn"><i class="fas fa-heart"></i></button>
+              </div>
+            </div>
+            <div class="featured-details">
+              <span class="product-category">Accessories</span>
+              <h3>Summit Pro Trekking Pole</h3>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>4.6 (42)</span>
+              </div>
+              <div class="product-price">
+                <span class="current-price">Rp 599,000</span>
+              </div>
+              <a
+                href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20produk%20Eiger%20Summit%20Pro%20Trekking%20Pole%20(Rp%20599.000).%20Apakah%20masih%20tersedia?"
+                class="btn btn-whatsapp btn-block"
+                ><i class="fab fa-whatsapp"></i> Beli via WhatsApp</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="section-footer" data-aos="fade-up">
+          <a href="#" class="btn btn-outline btn-lg">View All Products</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Categories</span>
+          <h2>Explore Our Collections</h2>
+          <p class="section-subtitle">
+            Find the perfect gear for your next adventure
+          </p>
+        </div>
+
+        <div class="categories-grid">
+          <div class="category-card" data-aos="zoom-in" data-aos-delay="100">
+            <div class="category-image">
+              <img src="img/category-1.jpg" alt="Backpacks & Bags Category" />
+              <div class="category-overlay">
+                <h3>Backpacks & Bags</h3>
+                <a href="#" class="btn btn-light">Explore</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="category-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="category-image">
+              <img src="img/category-2.jpg" alt="Footwear Category" />
+              <div class="category-overlay">
+                <h3>Footwear</h3>
+                <a href="#" class="btn btn-light">Explore</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="category-card" data-aos="zoom-in" data-aos-delay="300">
+            <div class="category-image">
+              <img src="img/category-3.jpg" alt="Apparel Category" />
+              <div class="category-overlay">
+                <h3>Apparel</h3>
+                <a href="#" class="btn btn-light">Explore</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="category-card" data-aos="zoom-in" data-aos-delay="400">
+            <div class="category-image">
+              <img src="img/category-4.jpg" alt="Camping Gear Category" />
+              <div class="category-overlay">
+                <h3>Camping Gear</h3>
+                <a href="#" class="btn btn-light">Explore</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="category-card" data-aos="zoom-in" data-aos-delay="500">
+            <div class="category-image">
+              <img src="img/category-5.jpg" alt="Accessories Category" />
+              <div class="category-overlay">
+                <h3>Accessories</h3>
+                <a href="#" class="btn btn-light">Explore</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="technology" id="technology">
+      <div class="container">
+        <div class="section-header light-text" data-aos="fade-up">
+          <span class="section-tag">Technology</span>
+          <h2>Our Innovations</h2>
+          <p class="section-subtitle">
+            Advanced technologies that power our products
+          </p>
+        </div>
+
+        <div class="tech-grid">
+          <div class="tech-item" data-aos="fade-right">
+            <div class="tech-icon">
+              <i class="fas fa-tint-slash"></i>
+            </div>
+            <div class="tech-content">
+              <h3>HyperDry™ Technology</h3>
+              <p>
+                Advanced waterproof membrane with superior breathability,
+                keeping you dry in extreme conditions while allowing moisture to
+                escape.
+              </p>
+            </div>
+          </div>
+
+          <div class="tech-item" data-aos="fade-left">
+            <div class="tech-icon">
+              <i class="fas fa-wind"></i>
+            </div>
+            <div class="tech-content">
+              <h3>AeroFlex™</h3>
+              <p>
+                Ultra-lightweight materials that don't compromise on durability,
+                reducing pack weight while maintaining superior strength.
+              </p>
+            </div>
+          </div>
+
+          <div class="tech-item" data-aos="fade-right">
+            <div class="tech-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="tech-content">
+              <h3>DuraShield™</h3>
+              <p>
+                Abrasion-resistant fabric technology that extends product
+                lifespan even in the harshest environments.
+              </p>
+            </div>
+          </div>
+
+          <div class="tech-item" data-aos="fade-left">
+            <div class="tech-icon">
+              <i class="fas fa-temperature-low"></i>
+            </div>
+            <div class="tech-content">
+              <h3>ThermoCore™</h3>
+              <p>
+                Advanced insulation system that regulates body temperature in
+                varying conditions, keeping you comfortable in any climate.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-video" data-aos="zoom-in">
+          <div class="video-wrapper">
+            <img
+              src="img/tech-video-thumbnail.jpg"
+              alt="Eiger Technology Overview"
+              class="video-thumbnail"
+            />
+            <button class="play-btn" aria-label="Play Video">
+              <i class="fas fa-play"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Best Sellers Section -->
+    <section class="best-sellers" id="best-sellers">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Top Products</span>
+          <h2>Our Best Sellers</h2>
+          <p class="section-subtitle">Most loved by our adventurers</p>
+        </div>
+
+        <div class="tabs-navigation" data-aos="fade-up">
+          <button class="tab-btn active" data-category="all">All</button>
+          <button class="tab-btn" data-category="backpacks">Backpacks</button>
+          <button class="tab-btn" data-category="footwear">Footwear</button>
+          <button class="tab-btn" data-category="apparel">Apparel</button>
+          <button class="tab-btn" data-category="camping">Camping</button>
+        </div>
+
+        <div class="best-seller-grid" data-aos="fade-up">
+          <div class="product-card" data-category="backpacks">
+            <div class="product-badge bestseller">Best Seller</div>
+            <img
+              src="img/bestseller-1.jpg"
+              alt="Eiger Borneo 70L Carrier Backpack"
+            />
+            <div class="product-details">
+              <h3>Borneo 70L Carrier</h3>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>5.0 (176)</span>
+              </div>
+              <div class="product-price">
+                <span class="current-price">Rp 1,799,000</span>
+              </div>
+              <a
+                href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20produk%20Eiger%20Borneo%2070L%20Carrier%20(Rp%201.799.000).%20Apakah%20masih%20tersedia?"
+                class="btn btn-whatsapp btn-sm"
+                ><i class="fab fa-whatsapp"></i> Beli via WhatsApp</a
+              >
+            </div>
+          </div>
+
+          <div class="product-card" data-category="footwear">
+            <div class="product-badge bestseller">Best Seller</div>
+            <img src="img/bestseller-2.jpg" alt="Eiger Anaconda Trail Shoes" />
+            <div class="product-details">
+              <h3>Anaconda Trail Shoes</h3>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>4.8 (205)</span>
+              </div>
+              <div class="product-price">
+                <span class="current-price">Rp 1,350,000</span>
+              </div>
+              <a
+                href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20produk%20Eiger%20Anaconda%20Trail%20Shoes%20(Rp%201.350.000).%20Apakah%20masih%20tersedia?"
+                class="btn btn-whatsapp btn-sm"
+                ><i class="fab fa-whatsapp"></i> Beli via WhatsApp</a
+              >
+            </div>
+          </div>
+
+          <div class="product-card" data-category="apparel">
+            <div class="product-badge bestseller">Best Seller</div>
+            <img src="img/bestseller-3.jpg" alt="Eiger Patagonia Jacket" />
+            <div class="product-details">
+              <h3>Patagonia Jacket</h3>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>4.9 (189)</span>
+              </div>
+              <div class="product-price">
+                <span class="current-price">Rp 2,199,000</span>
+              </div>
+              <a
+                href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20produk%20Eiger%20Patagonia%20Jacket%20(Rp%202.199.000).%20Apakah%20masih%20tersedia?"
+                class="btn btn-whatsapp btn-sm"
+                ><i class="fab fa-whatsapp"></i> Beli via WhatsApp</a
+              >
+            </div>
+          </div>
+
+          <div class="product-card" data-category="camping">
+            <div class="product-badge bestseller">Best Seller</div>
+            <img src="img/bestseller-4.jpg" alt="Eiger Ultralight Tent 2P" />
+            <div class="product-details">
+              <h3>Ultralight Tent 2P</h3>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>4.7 (142)</span>
+              </div>
+              <div class="product-price">
+                <span class="current-price">Rp 3,499,000</span>
+              </div>
+              <a
+                href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20produk%20Eiger%20Ultralight%20Tent%202P%20(Rp%203.499.000).%20Apakah%20masih%20tersedia?"
+                class="btn btn-whatsapp btn-sm"
+                ><i class="fab fa-whatsapp"></i> Beli via WhatsApp</a
+              >
+            </div>
+          </div>
+
+          <div class="product-card" data-category="backpacks">
+            <img src="img/bestseller-5.jpg" alt="Eiger Navigator Day Pack" />
+            <div class="product-details">
+              <h3>Navigator Day Pack</h3>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>4.5 (132)</span>
+              </div>
+              <div class="product-price">
+                <span class="current-price">Rp 899,000</span>
+              </div>
+              <a
+                href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20produk%20Eiger%20Navigator%20Day%20Pack%20(Rp%20899.000).%20Apakah%20masih%20tersedia?"
+                class="btn btn-whatsapp btn-sm"
+                ><i class="fab fa-whatsapp"></i> Beli via WhatsApp</a
+              >
+            </div>
+          </div>
+
+          <div class="product-card" data-category="apparel">
+            <img src="img/bestseller-6.jpg" alt="Eiger Mountain Pro Pants" />
+            <div class="product-details">
+              <h3>Mountain Pro Pants</h3>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>4.9 (97)</span>
+              </div>
+              <div class="product-price">
+                <span class="current-price">Rp 749,000</span>
+              </div>
+              <a
+                href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20produk%20Eiger%20Mountain%20Pro%20Pants%20(Rp%20749.000).%20Apakah%20masih%20tersedia?"
+                class="btn btn-whatsapp btn-sm"
+                ><i class="fab fa-whatsapp"></i> Beli via WhatsApp</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="section-footer" data-aos="fade-up">
+          <a href="#" class="btn btn-outline btn-lg">View All Best Sellers</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Testimonials</span>
+          <h2>Adventurer Stories</h2>
+          <p class="section-subtitle">Hear from our community of explorers</p>
+        </div>
+
+        <div
+          class="testimonials-slider"
+          id="testimonials-slider"
+          data-aos="fade-up"
+        >
+          <div class="testimonials-wrapper">
+            <div class="testimonial-slide active">
+              <div class="testimonial-content">
+                <div class="testimonial-image">
+                  <img
+                    src="img/testimonial-1.jpg"
+                    alt="Adventure at Mount Rinjani"
+                  />
+                </div>
+                <div class="testimonial-text">
+                  <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <p>
+                    "My Eiger backpack and boots were put to the ultimate test
+                    during my Mount Rinjani trek. Through rain and rough
+                    terrain, they remained comfortable and completely
+                    waterproof. I've never felt more prepared for an adventure!"
+                  </p>
+                  <div class="testimonial-author">
+                    <h4>Andi Pratama</h4>
+                    <p>Mountain Climber</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-slide">
+              <div class="testimonial-content">
+                <div class="testimonial-image">
+                  <img src="img/testimonial-2.jpg" alt="Camping at Bromo" />
+                </div>
+                <div class="testimonial-text">
+                  <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <p>
+                    "Camping at Bromo with temperatures dropping below 5°C, my
+                    Eiger tent and sleeping bag kept me perfectly warm. After
+                    three years of adventures, my gear still looks and performs
+                    like new. Truly impressive durability!"
+                  </p>
+                  <div class="testimonial-author">
+                    <h4>Maya Wijaya</h4>
+                    <p>Travel Blogger</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-slide">
+              <div class="testimonial-content">
+                <div class="testimonial-image">
+                  <img
+                    src="img/testimonial-3.jpg"
+                    alt="Hiking through Sumatran jungle"
+                  />
+                </div>
+                <div class="testimonial-text">
+                  <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <p>
+                    "As a professional guide leading treks through Sumatra's
+                    jungles, I trust only Eiger gear. The ventilation system in
+                    their apparel is exceptional for our humid climate, and the
+                    customer service is unmatched when I need replacements or
+                    repairs."
+                  </p>
+                  <div class="testimonial-author">
+                    <h4>Budi Setiawan</h4>
+                    <p>Professional Tour Guide</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-controls">
+            <button
+              class="testimonial-arrow prev"
+              aria-label="Previous Testimonial"
+            >
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="testimonial-dots">
+              <span class="dot active" data-slide="0"></span>
+              <span class="dot" data-slide="1"></span>
+              <span class="dot" data-slide="2"></span>
+            </div>
+            <button
+              class="testimonial-arrow next"
+              aria-label="Next Testimonial"
+            >
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Adventure Stories -->
+    <section class="adventure-stories" id="stories">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Inspiration</span>
+          <h2>Adventure Stories</h2>
+          <p class="section-subtitle">Get inspired for your next expedition</p>
+        </div>
+
+        <div class="stories-grid">
+          <div class="story-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="story-image">
+              <img src="img/story-1.jpg" alt="Trekking through Raja Ampat" />
+              <div class="story-tag">Trekking</div>
+            </div>
+            <div class="story-details">
+              <h3>Exploring the Hidden Paths of Raja Ampat</h3>
+              <p>
+                Discover the untouched beauty of Indonesia's marine paradise
+                through challenging coastal treks.
+              </p>
+              <div class="story-meta">
+                <span><i class="far fa-calendar"></i> August 15, 2025</span>
+                <span><i class="far fa-clock"></i> 5 min read</span>
+              </div>
+              <a href="#" class="read-more"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="story-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="story-image">
+              <img src="img/story-2.jpg" alt="Mountain Climbing in Papua" />
+              <div class="story-tag">Climbing</div>
+            </div>
+            <div class="story-details">
+              <h3>Conquering the Seven Summits of Papua</h3>
+              <p>
+                A journey through the most challenging peaks in Indonesia's
+                easternmost province.
+              </p>
+              <div class="story-meta">
+                <span><i class="far fa-calendar"></i> July 28, 2025</span>
+                <span><i class="far fa-clock"></i> 7 min read</span>
+              </div>
+              <a href="#" class="read-more"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="story-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="story-image">
+              <img src="img/story-3.jpg" alt="Camping in Bromo" />
+              <div class="story-tag">Camping</div>
+            </div>
+            <div class="story-details">
+              <h3>Night Under the Stars at Mount Bromo</h3>
+              <p>
+                Experience the mesmerizing sunrise after a night camping on the
+                crater rim.
+              </p>
+              <div class="story-meta">
+                <span><i class="far fa-calendar"></i> June 12, 2025</span>
+                <span><i class="far fa-clock"></i> 4 min read</span>
+              </div>
+              <a href="#" class="read-more"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-footer" data-aos="fade-up">
+          <a href="#" class="btn btn-outline btn-lg">View All Stories</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Store Locator -->
+    <section class="store-locator" id="stores">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Our Stores</span>
+          <h2>Visit an EIGER Store</h2>
+          <p class="section-subtitle">
+            Find a store near you to experience our products firsthand
+          </p>
+        </div>
+
+        <div class="store-map" data-aos="fade-up">
+          <img
+            src="img/indonesia-map.jpg"
+            alt="EIGER Store Locations in Indonesia"
+            class="map-image"
+          />
+          <div class="map-pin" style="top: 30%; left: 25%">
+            <div class="pin-dot"></div>
+            <div class="pin-pulse"></div>
+            <div class="pin-info">
+              <h4>EIGER Adventure Jakarta</h4>
+              <p>Grand Indonesia Mall, East Mall Lt. 3</p>
+            </div>
+          </div>
+          <div class="map-pin" style="top: 40%; left: 40%">
+            <div class="pin-dot"></div>
+            <div class="pin-pulse"></div>
+            <div class="pin-info">
+              <h4>EIGER Adventure Bandung</h4>
+              <p>Jl. Cihampelas No. 22</p>
+            </div>
+          </div>
+          <div class="map-pin" style="top: 35%; left: 55%">
+            <div class="pin-dot"></div>
+            <div class="pin-pulse"></div>
+            <div class="pin-info">
+              <h4>EIGER Adventure Surabaya</h4>
+              <p>Tunjungan Plaza 4, Lt. 2</p>
+            </div>
+          </div>
+          <div class="map-pin" style="top: 22%; left: 75%">
+            <div class="pin-dot"></div>
+            <div class="pin-pulse"></div>
+            <div class="pin-info">
+              <h4>EIGER Adventure Makassar</h4>
+              <p>Mall Ratu Indah, Lt. 1</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="store-search" data-aos="fade-up">
+          <h3>Find Your Nearest Store</h3>
+          <div class="search-form">
+            <div class="form-group">
+              <input
+                type="text"
+                placeholder="Enter your location"
+                class="form-control"
+              />
+              <button class="btn btn-primary">Search</button>
+            </div>
+          </div>
+          <div class="store-count">
+            <strong>120+</strong> stores across Indonesia
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+      <div class="container">
+        <div class="newsletter-wrapper" data-aos="fade-up">
+          <div class="newsletter-content">
+            <h2>Join the Adventure</h2>
+            <p>
+              Subscribe to our newsletter for exclusive offers, adventure tips,
+              and new product releases.
+            </p>
+            <form class="newsletter-form">
+              <div class="form-group">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  class="form-control"
+                  required
+                />
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+              </div>
+            </form>
+            <div class="newsletter-privacy">
+              <small
+                >By subscribing, you agree to our
+                <a href="#">Privacy Policy</a> and consent to receive updates
+                from EIGER.</small
+              >
+            </div>
+          </div>
+          <div class="newsletter-image">
+            <img src="img/newsletter-img.jpg" alt="Join the EIGER community" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <img src="img/eiger-logo-white.png" alt="EIGER Adventure Logo" />
+            </div>
+            <p class="footer-tagline">Equipping adventurers since 1989</p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Shop</h4>
+            <ul>
+              <li><a href="#">New Arrivals</a></li>
+              <li><a href="#">Best Sellers</a></li>
+              <li><a href="#">Backpacks</a></li>
+              <li><a href="#">Footwear</a></li>
+              <li><a href="#">Apparel</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>About</h4>
+            <ul>
+              <li><a href="#">Our Story</a></li>
+              <li><a href="#">Sustainability</a></li>
+              <li><a href="#">Technology</a></li>
+              <li><a href="#">Adventure Community</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Customer Service</h4>
+            <ul>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Shipping & Returns</a></li>
+              <li><a href="#">Size Guide</a></li>
+              <li><a href="#">Product Care</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <address>
+              <p>
+                <i class="fas fa-map-marker-alt"></i> Jl. Cihampelas No. 22,
+                Bandung
+              </p>
+              <p><i class="fas fa-phone-alt"></i> +62-22-87780780</p>
+              <p><i class="fas fa-envelope"></i> info@eigeradventure.com</p>
+            </address>
+            <div class="payment-methods">
+              <img
+                src="img/payment-methods.png"
+                alt="Accepted Payment Methods"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="copyright">
+            <p>&copy; 2025 EIGER Adventure. All rights reserved.</p>
+          </div>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to Top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
   </body>
 </html>
